@@ -2,3 +2,6 @@
 {"level":"error","message":"El usuario ya existe"}
 {"level":"error","message":"transporter is not defined"}
 {"level":"error","message":"El usuario ya existe"}
+{"level":"error","message":"data must be a string or Buffer and salt must either be a salt string or a number of rounds"}
+{"level":"error","message":"transporter is not defined"}
+{"level":"error","message":"El usuario ya existe"}

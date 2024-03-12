@@ -1,0 +1,135 @@
+components:
+  schemas:
+    products:
+      PostProduct:
+        type: object
+        properties:
+          message:
+            type: string
+            description: Mensaje del estado de la solicitud
+          data:
+            type: object
+            description: El objeto con los campos del producto.
+            properties:
+              title:
+                type: string
+                description: Nombre del producto
+              description:
+                type: string
+                description: Descripción del producto
+              price:
+                type: number
+                description: Precio del producto
+              stock:
+                type: number
+                description: Cantidad en stock del producto
+              status:
+                type: boolean
+                description: Estado del producto
+              category:
+                type: string
+                description: Categoría del producto
+              owner:
+                type: string
+                description: Nombre del propietario del producto
+              id:
+                type: string
+                description: Número de Id del producto
+      GetProducts:
+        type: array
+        items:
+          type: object
+          properties:
+            title:
+              type: string
+              description: "Nombre del producto"
+            description:
+              type: string
+              description: "Descripción del producto"
+            price:
+              type: number
+              description: "Precio del producto"
+            category:
+              type: string
+              description: "Categoría del producto"
+            code:
+              type: string
+              description: "Código del producto"
+            status:
+              type: boolean
+              description: "Estado del producto"
+            owner:
+              type: string
+              description: "Nombre del propietario del producto"
+            stock:
+              type: number
+              description: "Stock del producto"
+            id:
+              type: string
+              description: "Id del producto"
+          example:
+            - title: "Producto 2"
+              description: "Descripción del producto 2"
+              price: 200
+              category: "Categoria 2"
+              code: "Code 2"
+              status: true
+              stock: 100
+              owner: "Nombre del propietario del producto 2"
+              id: "65e7d22de8501735a05f4893"
+      GetProductById:
+        type: object
+        properties:
+          title:
+            type: string
+            description: "Nombre del producto"
+          description:
+            type: string
+            description: "Descripción del producto"
+          price:
+            type: number
+            description: "Precio del producto"
+          category:
+            type: string
+            description: "Categoría del producto"
+          code:
+            type: string
+            description: "Código del producto"
+          status:
+            type: boolean
+            description: "Estado del producto"
+          owner:
+            type: string
+            description: "Nombre del propietario del producto"
+          stock:
+            type: number
+            description: "Stock del producto"
+          id:
+            type: string
+            description: "Id del producto"
+        example:
+          owner: "admin"
+          id: "65e7d22de8501735a05f4893"
+          title: "Producto 2"          
+          description: "Descripción del producto 2"
+          price: 200
+          stock: 20
+          category: "Categoria 2"
+          code: "Code 2"
+          status: true
+      ValidationTokenAndPermissions:
+        type: object
+        properties:
+          message: 
+            type: string
+            description: "Mensaje de respuesta"
+        example:
+          message: "Su rol actual no permite realizar la operación"
+      Error:
+        type: object
+        properties:
+          message:
+            type: string
+            description: "Mensaje de respuesta"
+        example:
+          message: "PRODUCT VALIDATION FAILED: PATH IS REQUIRED"
